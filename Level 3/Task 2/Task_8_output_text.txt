@@ -1,0 +1,41 @@
+Customer Preference Analysis 
+
+Cuisines Rating: 
+Cuisines
+Sunda         4.900000
+B�_rek        4.700000
+Taiwanese     4.650000
+Ramen         4.500000
+Dim Sum       4.466667
+Hawaiian      4.412500
+Bubble Tea    4.400000
+D�_ner        4.400000
+Curry         4.400000
+Kebab         4.380000
+Name: Aggregate rating, dtype: float64
+Cuisines Votes: 
+Cuisines
+North Indian    595981
+Chinese         364351
+Italian         329265
+Continental     288255
+Fast Food       184058
+American        183117
+Cafe            177568
+Mughlai         151946
+Desserts        105889
+Asian           104303
+Name: Votes, dtype: int64
+The Higest rating cuisines: 
+            avg_rating  total_votes
+Cuisines                           
+Sunda         4.900000         5514
+B�_rek        4.700000         1305
+Ramen         4.500000         1259
+Dim Sum       4.466667         1755
+Hawaiian      4.412500         8012
+Bubble Tea    4.400000          659
+Curry         4.400000         2059
+Kebab         4.380000         1536
+Izgara        4.350000         1166
+Filipino      4.340000         3789
