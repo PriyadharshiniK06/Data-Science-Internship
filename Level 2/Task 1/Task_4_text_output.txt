@@ -1,0 +1,31 @@
+Table Booking and Online Delivery
+
+Determine the percentage of restaurants that offer table booking and online delivery: 
+
+Table Booking: 
+Has Table booking
+No     87.875615
+Yes    12.124385
+Name: proportion, dtype: float64
+12.12 % of the restaurants offer table booking while 87.88 % of the restaurants does not offer table booking
+Online Delivery: 
+Has Online delivery
+No     74.337766
+Yes    25.662234
+Name: proportion, dtype: float64
+25.66 % of the restaurants offer online delivery while 74.34 % of the restaurants does not offer online delivery
+Comparing the average rating of the restaurants with table booking and without table booking: 
+
+Has Table booking
+No     2.559359
+Yes    3.441969
+Name: Aggregate rating, dtype: float64
+3.44 is the average rating of the restaurants with table booking and 2.559358989634219 is the average rating of the restaurants without table booking
+The Availability of online delivery amoung restaurants with different price ranges
+
+Has Online delivery         No        Yes
+Price range                              
+1                    84.225923  15.774077
+2                    58.689367  41.310633
+3                    70.809659  29.190341
+4                    90.955631   9.044369
