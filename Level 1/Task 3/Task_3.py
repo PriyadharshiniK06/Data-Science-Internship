@@ -1,0 +1,38 @@
+#1. Visualize the locations of restaurants on a map using latitude and longitude information
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("Dataset .csv")
+plt.figure(figsize=(8,6))
+plt.scatter(df["Longitude"],df["Latitude"],alpha=1.0)
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.title("Geographical Distribution of Restaurants")
+plt.savefig("Geographical distribution of Restaurants.png",dpi=300,bbox_inches="tight")
+plt.show()
+#2.Visualize the distribution of the restaurants across the cities
+count_of_cities=df["City"].value_counts().head(10)
+print(count_of_cities)
+count_of_cities.plot(kind="bar",figsize=(10,12))
+plt.xlabel("City")
+plt.ylabel("Number of Restaurants")
+plt.title("Distribution of Restaurants across each City")
+plt.savefig("Distribution of restaurants across each City.png",dpi=300,bbox_inches="tight")
+plt.show()
+#3. Visualize the distribution of the restaurants across the countries
+country_count=df["Country Code"].value_counts().head(10)
+print(country_count)
+country_count.plot(kind="bar",figsize=(10,12))
+plt.xlabel("Country Code")
+plt.ylabel("Number of Restaurants")
+plt.title("Distribution of Restaurants across each Country")
+plt.savefig("Distribution of Restaurants across each Country.png",dpi=300,bbox_inches="tight")
+plt.show()
+#4. Determine the correlation between the restaurant location and rating
+rating=df.groupby("City")["Aggregate rating"].mean().sort_values(ascending=False).head(10)
+print(rating)
+rating.plot(kind="bar",figsize=(10,12))
+plt.xlabel("Location")
+plt.ylabel("Rating")
+plt.title("Correlation between the location and rating")
+plt.savefig("Correlation between the location and rating.png",dpi=300,bbox_inches="tight")
+plt.show()
