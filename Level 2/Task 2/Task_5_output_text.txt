@@ -1,0 +1,51 @@
+Price Range Analysis
+
+Most Common Price Range amoung all the restaurants: 
+1
+To calculate the average rating for each price range: 
+Price range
+1    1.999887
+2    2.941054
+3    3.683381
+4    3.817918
+Name: Aggregate rating, dtype: float64
+To identify the color that represents the highest average rating among different price range: 
+Rating color
+Dark Green    4.659801
+Green         4.168119
+Orange        3.051619
+Red           2.297849
+White         0.000000
+Yellow        3.683429
+Name: Aggregate rating, dtype: float64
+The color that represents the highest average rating amoung different price range: 
+Dark Green
+The highest average rating value is : 
+4.659800664451827
+After combining the price range and rating color that is grouped with aggregate rating: 
+Price range  Rating color
+1            Dark Green      4.668750
+             Green           4.157639
+             Orange          3.040464
+             Red             2.293548
+             White           0.000000
+             Yellow          3.661842
+2            Dark Green      4.627536
+             Green           4.159385
+             Orange          3.048491
+             Red             2.300000
+             White           0.000000
+             Yellow          3.671159
+3            Dark Green      4.646032
+             Green           4.169231
+             Orange          3.097764
+             Red             2.305000
+             White           0.000000
+             Yellow          3.716265
+4            Dark Green      4.709459
+             Green           4.188144
+             Orange          3.162376
+             Red             2.283333
+             White           0.000000
+             Yellow          3.716000
+Name: Aggregate rating, dtype: float64
