@@ -1,0 +1,111 @@
+TASK 1: DATA EXPLORATION AND PREPROCESSING
+
+Number of Rows and Columns: 
+(9551, 21)
+
+Column Names: 
+Index(['Restaurant ID', 'Restaurant Name', 'Country Code', 'City', 'Address',
+       'Locality', 'Locality Verbose', 'Longitude', 'Latitude', 'Cuisines',
+       'Average Cost for two', 'Currency', 'Has Table booking',
+       'Has Online delivery', 'Is delivering now', 'Switch to order menu',
+       'Price range', 'Aggregate rating', 'Rating color', 'Rating text',
+       'Votes'],
+      dtype='object')
+
+Missing Values in Each Column: 
+Restaurant ID           0
+Restaurant Name         0
+Country Code            0
+City                    0
+Address                 0
+Locality                0
+Locality Verbose        0
+Longitude               0
+Latitude                0
+Cuisines                9
+Average Cost for two    0
+Currency                0
+Has Table booking       0
+Has Online delivery     0
+Is delivering now       0
+Switch to order menu    0
+Price range             0
+Aggregate rating        0
+Rating color            0
+Rating text             0
+Votes                   0
+dtype: int64
+
+Handling Missing Values: 
+None
+Missing Values in 'Cuisines' column after replacement: 
+0
+Data Types of each column: 
+Restaurant ID             int64
+Restaurant Name          object
+Country Code              int64
+City                     object
+Address                  object
+Locality                 object
+Locality Verbose         object
+Longitude               float64
+Latitude                float64
+Cuisines                 object
+Average Cost for two      int64
+Currency                 object
+Has Table booking        object
+Has Online delivery      object
+Is delivering now        object
+Switch to order menu     object
+Price range               int64
+Aggregate rating        float64
+Rating color             object
+Rating text              object
+Votes                     int64
+dtype: object
+To identify any class imbalance : 
+Aggregate rating
+0.0    2148
+1.8       1
+1.9       2
+2.0       7
+2.1      15
+2.2      27
+2.3      47
+2.4      87
+2.5     110
+2.6     191
+2.7     250
+2.8     315
+2.9     381
+3.0     468
+3.1     519
+3.2     522
+3.3     483
+3.4     498
+3.5     480
+3.6     458
+3.7     427
+3.8     400
+3.9     335
+4.0     266
+4.1     274
+4.2     221
+4.3     174
+4.4     144
+4.5      95
+4.6      78
+4.7      42
+4.8      25
+4.9      61
+Name: count, dtype: int64
+Aggregate Rating: 
+count    9551.000000
+mean        2.666370
+std         1.516378
+min         0.000000
+25%         2.500000
+50%         3.200000
+75%         3.700000
+max         4.900000
+Name: Aggregate rating, dtype: float64
