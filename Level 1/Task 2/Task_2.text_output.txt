@@ -1,0 +1,229 @@
+Task 2: Descriptive Analysis: 
+
+Getting the data types of all the columns (to identify the numerical columns):
+Restaurant ID             int64
+Restaurant Name          object
+Country Code              int64
+City                     object
+Address                  object
+Locality                 object
+Locality Verbose         object
+Longitude               float64
+Latitude                float64
+Cuisines                 object
+Average Cost for two      int64
+Currency                 object
+Has Table booking        object
+Has Online delivery      object
+Is delivering now        object
+Switch to order menu     object
+Price range               int64
+Aggregate rating        float64
+Rating color             object
+Rating text              object
+Votes                     int64
+dtype: object
+Getting the statistical measures of the numerical columns: 
+
+To get the statistical measures of the longitude column: 
+count    9551.000000
+mean       64.126574
+std        41.467058
+min      -157.948486
+25%        77.081343
+50%        77.191964
+75%        77.282006
+max       174.832089
+Name: Longitude, dtype: float64
+To get the statistical measures of the latitude column: 
+count    9551.000000
+mean       25.854381
+std        11.007935
+min       -41.330428
+25%        28.478713
+50%        28.570469
+75%        28.642758
+max        55.976980
+Name: Latitude, dtype: float64
+To get the statistical measures of the Average cost for two : 
+count      9551.000000
+mean       1199.210763
+std       16121.183073
+min           0.000000
+25%         250.000000
+50%         400.000000
+75%         700.000000
+max      800000.000000
+Name: Average Cost for two, dtype: float64
+To get the statistical measures of the price range column: 
+count    9551.000000
+mean        1.804837
+std         0.905609
+min         1.000000
+25%         1.000000
+50%         2.000000
+75%         2.000000
+max         4.000000
+Name: Price range, dtype: float64
+To get the statistical measures of the Aggregate Rating: 
+count    9551.000000
+mean        2.666370
+std         1.516378
+min         0.000000
+25%         2.500000
+50%         3.200000
+75%         3.700000
+max         4.900000
+Name: Aggregate rating, dtype: float64
+To get the statistical measures of the Votes column: 
+count     9551.000000
+mean       156.909748
+std        430.169145
+min          0.000000
+25%          5.000000
+50%         31.000000
+75%        131.000000
+max      10934.000000
+Name: Votes, dtype: float64
+
+Analyzing the distribution of the categorical columns: 
+
+Restaurant Name: 
+Restaurant Name
+Cafe Coffee Day     83
+Domino's Pizza      79
+Subway              63
+Green Chick Chop    51
+McDonald's          48
+Keventers           34
+Pizza Hut           30
+Giani               29
+Baskin Robbins      28
+Barbeque Nation     26
+Name: count, dtype: int64
+City: 
+City
+New Delhi       5473
+Gurgaon         1118
+Noida           1080
+Faridabad        251
+Ghaziabad         25
+Bhubaneshwar      21
+Lucknow           21
+Ahmedabad         21
+Amritsar          21
+Guwahati          21
+Name: count, dtype: int64
+Address: 
+Address
+Sector 41, Noida                                                              11
+Dilli Haat, INA, New Delhi                                                    11
+Greater Kailash (GK) 1, New Delhi                                             10
+The Imperial, Janpath, New Delhi                                               9
+Cyber Hub, DLF Cyber City, Gurgaon                                             8
+HUDA Market, Sector 56, Gurgaon                                                8
+Food Court, 3rd Floor, Logix City Centre, Sector 32, Near Sector 34, Noida     8
+Palate of Delhi, Dhaula Kuan Metro Station, Chanakyapuri, New Delhi            8
+The Lalit, Barakhamba Avenue, Barakhamba Road, New Delhi                       8
+Unitech Infospace, Sector 21, Gurgaon                                          7
+Name: count, dtype: int64
+Locality: 
+Locality
+Connaught Place        122
+Rajouri Garden          99
+Shahdara                87
+Defence Colony          86
+Malviya Nagar           85
+Pitampura               85
+Mayur Vihar Phase 1     84
+Rajinder Nagar          81
+Safdarjung              80
+Satyaniketan            79
+Name: count, dtype: int64
+Locality Verbose: 
+Locality Verbose
+Connaught Place, New Delhi        122
+Rajouri Garden, New Delhi          99
+Shahdara, New Delhi                87
+Defence Colony, New Delhi          86
+Pitampura, New Delhi               85
+Malviya Nagar, New Delhi           84
+Mayur Vihar Phase 1, New Delhi     84
+Rajinder Nagar, New Delhi          81
+Safdarjung, New Delhi              80
+Satyaniketan, New Delhi            79
+Name: count, dtype: int64
+Cuisines: 
+Cuisines
+North Indian                      936
+North Indian, Chinese             511
+Chinese                           354
+Fast Food                         354
+North Indian, Mughlai             334
+Cafe                              299
+Bakery                            218
+North Indian, Mughlai, Chinese    197
+Bakery, Desserts                  170
+Street Food                       149
+Name: count, dtype: int64
+Currency: 
+Currency
+Indian Rupees(Rs.)        8652
+Dollar($)                  482
+Pounds(��)                  80
+Brazilian Real(R$)          60
+Rand(R)                     60
+Emirati Diram(AED)          60
+NewZealand($)               40
+Turkish Lira(TL)            34
+Botswana Pula(P)            22
+Indonesian Rupiah(IDR)      21
+Rating color: 
+Rating color
+Orange        3737
+White         2148
+Yellow        2100
+Green         1079
+Dark Green     301
+Red            186
+Name: count, dtype: int64
+Rating Text: 
+Rating text
+Average      3737
+Not rated    2148
+Good         2100
+Very Good    1079
+Excellent     301
+Poor          186
+Name: count, dtype: int64
+Price Range: 
+Price range
+1    4444
+2    3113
+3    1408
+4     586
+Name: count, dtype: int64
+Coverting the boolean values of the column into percentage: 
+Has Table Booking: 
+Has Table booking
+No     87.875615
+Yes    12.124385
+Name: proportion, dtype: float64
+Only 12.12 % of the restaurants offer Table Booking while  87.88 % of the restaurants does not offer Table Booking 
+Has Online Delivery: 
+Has Online delivery
+No     74.337766
+Yes    25.662234
+Name: proportion, dtype: float64
+Only 25.66 % of the restaurants offer Online Delivery while, 74.34 % of the restaurats does not offer Online Delivery. 
+Is Delivery Now: 
+Is delivering now
+No     99.644016
+Yes     0.355984
+Name: proportion, dtype: float64
+Only 0.36 % of the restaurants are currently delivering now ,while 99.64 % of the restaurants are not delivering now
+Switch to order menu: 
+Switch to order menu
+No    100.0
+Name: proportion, dtype: float64
+Only 0.00 % of the restaurants are switched to order menu while, 100.00 % of the restaurants are not switched to order menu

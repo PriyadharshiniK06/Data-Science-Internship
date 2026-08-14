@@ -1,0 +1,132 @@
+import pandas as pd
+import matplotlib.pyplot as p
+#load the datasets
+df=pd.read_csv("Dataset .csv")
+#to identify the numerical columns
+print(df.dtypes)
+#to calculate the basic statistical measures of the numerical columns
+#The columns like restaurant id is used as reference for the restaurants 
+#And the column Country Code is used as reference for the Countries
+#As these two columns are used for reference we need not want to calculate the statistical distribution of these two columns
+#Longitude
+print("Longitude : ")
+print(df["Longitude"].describe())
+#Latitude
+print("Latitude : ")
+print(df["Latitude"].describe())
+#Average Cost for Two 
+print("Average Cost for Two : ")
+print(df["Average Cost for two"].describe())
+#Price Range
+print("Price Range: ")
+print(df["Price range"].describe())
+#Aggregate Rating
+print("Aggregate Rating: ")
+print(df["Aggregate rating"].describe())
+#Votes
+print("Votes: ")
+print(df["Votes"].describe())
+#to analyze the distribution of the categorical columns
+print(df["Restaurant Name"].value_counts().head(10))
+print(df['City'].value_counts().head(10))
+print(df["Address"].value_counts().head(10))
+print(df['Locality'].value_counts().head(10))
+print(df["Locality Verbose"].value_counts().head(10))
+print(df["Cuisines"].value_counts().head(10))
+print(df["Currency"].value_counts().head(10))
+print(df["Rating color"].value_counts().head(10))
+print(df["Rating text"].value_counts().head(10))
+print(df["Price range"].value_counts().head(10))
+#converting the boolean type columns into percentage
+Table=df['Has Table booking'].value_counts(normalize=True)*100
+print(Table)
+yes_tb=Table.get("Yes",0)
+no_tb=Table.get("No",0)
+print(f"Only {yes_tb:.2f} of restaurants offer Table Booking, while {no_tb:.2f} of restaurants do not offer table booking.")
+Online=df["Has Online delivery"].value_counts(normalize=True)*100
+print(Online)
+yes_od=Online.get("Yes",0)
+no_od=Online.get("No",0)
+print(f"Only {yes_od:.2f} of restaurants have online delivery facility, while {no_od:.2f} of restaurants do not provide online delivery")
+delivery=df["Is delivering now"].value_counts(normalize=True)*100
+print(delivery)
+yes_d=delivery.get("Yes",0)
+no_d=delivery.get("No",0)
+print(f"Only {yes_d:.2f} %  of restaurants are currently delivering, while {no_d:.2f}%  are not delivering currently at the moment")
+Switch=df["Switch to order menu"].value_counts(normalize=True)*100
+print(Switch)
+yes_s=Switch.get("Yes",0)
+no_s=Switch.get("No",0)
+print(f"All the Restaurants {no_d} % have the Switch to order menu option set to NO")
+#Adding charts to visulize these distributions
+#%%
+fig,axes=p.subplots(3,1,figsize=(16,18),dpi=300)
+df["City"].value_counts().head(10).plot(kind="bar",ax=axes[0],title="Top 10 Cities")
+df["Cuisines"].value_counts().head(10).plot(kind="bar",ax=axes[1],title="Top 10 Cuisines")
+df["Price range"].value_counts().head(10).plot(kind="bar",ax=axes[2],title="Price Range Distribution")
+p.tight_layout(pad=3.0)
+p.savefig("descriptive analysis.png",dpi=300,bbox_inches='tight')
+p.show()
+#creating a text file to see the output:
+with open("Task_2.text_output.txt" , "w",encoding="utf-8") as f:
+    f.write("Task 2: Descriptive Analysis: \n\n")
+    f.write("Getting the data types of all the columns (to identify the numerical columns):\n")
+    f.write(str(df.dtypes)+"\n")
+    f.write("Getting the statistical measures of the numerical columns: \n\n")
+    f.write("To get the statistical measures of the longitude column: \n")
+    f.write(str(df["Longitude"].describe())+"\n")
+    f.write("To get the statistical measures of the latitude column: \n")
+    f.write(str(df["Latitude"].describe())+"\n")
+    f.write("To get the statistical measures of the Average cost for two : \n")
+    f.write(str(df["Average Cost for two"].describe())+"\n")
+    f.write("To get the statistical measures of the price range column: \n")
+    f.write(str(df["Price range"].describe())+"\n")
+    f.write("To get the statistical measures of the Aggregate Rating: \n")
+    f.write(str(df["Aggregate rating"].describe())+"\n")
+    f.write("To get the statistical measures of the Votes column: \n")
+    f.write(str(df["Votes"].describe())+"\n\n")
+    f.write("Analyzing the distribution of the categorical columns: \n\n")
+    f.write("Restaurant Name: \n")
+    f.write(str(df["Restaurant Name"].value_counts().head(10)))
+    f.write("\n")
+    f.write("City: \n")
+    f.write(str(df["City"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Address: \n")
+    f.write(str(df["Address"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Locality: \n")
+    f.write(str(df["Locality"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Locality Verbose: \n")
+    f.write(str(df["Locality Verbose"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Cuisines: \n")
+    f.write(str(df["Cuisines"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Currency: \n")
+    f.write(df["Currency"].value_counts().head(10).to_string())
+    f.write("\n")
+    f.write("Rating color: \n")
+    f.write(str(df["Rating color"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Rating Text: \n")
+    f.write(str(df["Rating text"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Price Range: \n")
+    f.write(str(df["Price range"].value_counts().head(10)))
+    f.write("\n")
+    f.write("Coverting the boolean values of the column into percentage: \n")
+    f.write("Has Table Booking: \n")
+    f.write(str(df["Has Table booking"].value_counts(normalize=True)*100)+"\n")
+    f.write(f"Only {yes_tb:.2f} % of the restaurants offer Table Booking while {no_tb: .2f} % of the restaurants does not offer Table Booking \n")
+    f.write("Has Online Delivery: \n")
+    f.write(str(df["Has Online delivery"].value_counts(normalize=True)*100)+"\n")
+    f.write(f"Only {yes_od:.2f} % of the restaurants offer Online Delivery while, {no_od:.2f} % of the restaurats does not offer Online Delivery. \n")
+    f.write("Is Delivery Now: \n")
+    f.write(str(df["Is delivering now"].value_counts(normalize=True)*100)+"\n")
+    f.write(f"Only {yes_d:.2f} % of the restaurants are currently delivering now ,while {no_d:.2f} % of the restaurants are not delivering now\n")
+    f.write("Switch to order menu: \n")
+    f.write(str(df["Switch to order menu"].value_counts(normalize=True)*100)+"\n")
+    f.write(f"Only {yes_s:.2f} % of the restaurants are switched to order menu while, {no_s:.2f} % of the restaurants are not switched to order menu\n")
+# %%
